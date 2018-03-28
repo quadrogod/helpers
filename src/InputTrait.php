@@ -4,7 +4,7 @@ namespace Quadrogod\Helpers;
 
 trait InputTrait {
     
-    public $inputParams = null;
+    public static $inputParams = null;
 
     /**
      * 
@@ -13,8 +13,8 @@ trait InputTrait {
     public static function getInputParams() 
     {	
 
-	if ($this->inputParams !== NULL) {
-	    return $this->inputParams;
+	if (self::$inputParams !== NULL) {
+	    return self::$inputParams;
 	}
 	
         if (PHP_SAPI == 'cli') {
@@ -49,7 +49,7 @@ trait InputTrait {
             $options = $_GET;
         }
         //
-        return $this->inputParams = $options;
+        return self::$inputParams = $options;
     }
     
     public function hasInputParam($name) {
