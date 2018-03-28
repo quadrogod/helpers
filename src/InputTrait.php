@@ -53,6 +53,7 @@ trait InputTrait {
     }
     
     public function hasInputParam($name) {
+	// check
 	if ($this->inputParams === NULL)
 	    $this->getInputParams();
 	//
